@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <dataprovider>
+            <label>Dataprovider</label>
+            <sort_order>195</sort_order>
+        </dataprovider>
+    </tabs>
+    <sections>
+        <dataprovider translate="label">
+           <label>Dataprovider</label>
+           <tab>dataprovider</tab>
+           <frontend_type>text</frontend_type>
+           <sort_order>71</sort_order>
+           <show_in_default>1</show_in_default>
+           <show_in_website>1</show_in_website>
+           <show_in_store>1</show_in_store>
+            <groups>
+                <general translate="label" module="dataprovider">
+                    <label>General</label>
+                    <tab>dataprovider</tab>
+                    <expanded>1</expanded>
+                    <sort_order>500</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>0</show_in_store>
+                    <fields>
+                       <apikey translate="label">
+                           <label>API key</label>
+                           <comment><![CDATA[Request an API key through info@dataprovider.com]]></comment>
+                           <frontend_type>text</frontend_type>
+                           <sort_order>20</sort_order>
+                           <show_in_default>1</show_in_default>
+                           <show_in_website>1</show_in_website>
+                           <show_in_store>1</show_in_store>
+                       </apikey>
+                    </fields>
+                </general>
+            </groups>
+        </dataprovider>
+    </sections>
+</config>
