@@ -2,3 +2,4 @@ app/code/community/Hackathon/Dataprovider app/code/community/Hackathon/Dataprovi
 app/design/frontend/base/default/layout/dataprovider.xml app/design/frontend/base/default/layout/dataprovider.xml
 app/etc/modules/Hackathon_Dataprovider.xml app/etc/modules/Hackathon_Dataprovider.xml
 js/hackathon/dataprovider.js js/hackathon/dataprovider.js
+js/jquery/* js/jquery/
