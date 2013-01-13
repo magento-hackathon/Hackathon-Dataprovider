@@ -1,3 +1,4 @@
 app/code/community/Hackathon/Dataprovider app/code/community/Hackathon/Dataprovider
-app/etc/modules/* app/etc/modules/
-js/* js/
+app/design/frontend/base/default/layout/dataprovider.xml app/design/frontend/base/default/layout/dataprovider.xml
+app/etc/modules/Hackathon_Dataprovider.xml app/etc/modules/Hackathon_Dataprovider.xml
+js/hackathon/dataprovider.js js/hackathon/dataprovider.js
