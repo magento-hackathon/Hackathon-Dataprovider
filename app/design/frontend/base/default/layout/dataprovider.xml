@@ -2,9 +2,12 @@
 <layout version="0.1.0">
 	<checkout_onepage_index>
 		<reference name="head">
+	        <action method="addJs"><script>prototype/window.js</script></action>
+	        <action method="addItem"><type>js_css</type><name>prototype/windows/themes/default.css</name></action>
+	        <action method="addItem"><type>js_css</type><name>prototype/windows/themes/magento.css</name></action>
 			<action method="addJs"><script>jquery/jquery.min.js</script></action>
 			<action method="addJs"><script>jquery/noconflict.js</script></action>
 			<action method="addJs"><script>hackathon/dataprovider.js</script></action>
-		</reference>
+    	</reference>
 	</checkout_onepage_index>
 </layout>

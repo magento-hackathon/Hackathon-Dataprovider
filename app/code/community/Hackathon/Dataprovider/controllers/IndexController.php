@@ -2,17 +2,25 @@
 
 class Hackathon_Dataprovider_IndexController extends Mage_Core_Controller_Front_Action
 {
+	/*
+	 * @TODO Make a modal popup when multiple results are returned by Dataprovider
+	 * @TODO Request an API call to be made by Dataprovider to search on company name
+	 * @TODO Append company data to the contact form, based on email adddress (hostname call)
+	 * @TODO OneStepCheckout, CheckItOut, etc support
+	 * @DONE Decide on how to handle the insertion of data when data already exists in input fields
+	 */
+	
 	public function indexAction() 
-	{
+	{	
 		$fieldsNeeded = array(
 			// only get the fields we need from DP's response
 			'company',
 			'emailaddresses',
+			'address',
 			'zipcode',
-			'country',
 			'city',
 			'region',
-			'address',
+			'country',
 			'phonenumber',
 			'faxnumber',
 			'cocnumber'
@@ -26,6 +34,7 @@ class Hackathon_Dataprovider_IndexController extends Mage_Core_Controller_Front_
 			'zipcode' => 'postcode',
 			'phonenumber' => 'telephone',
 			'taxvat' => 'tax',
+			'address' => 'street1',
 		);
 		
 		$helper = Mage::helper('dataprovider');
@@ -56,22 +65,33 @@ class Hackathon_Dataprovider_IndexController extends Mage_Core_Controller_Front_
 		}
 		
 		if(isset($DPdata)) {
-			$dataObject = array_pop($DPdata->data);
-
-			$data = array();
-			foreach($dataObject as $key=>$value) {
-				if(in_array($key,$fieldsNeeded)) {
-					if($key=='emailaddresses') {
-						$emailaddresses = explode(',',$value);
-						$data['email'] = array_pop($emailaddresses);
-					} else {
-						$mapped = (isset($mapping[$key]) ? $mapping[$key] : $key);
-						$data[$mapped] = $value;
+			$json = array();
+			foreach($DPdata->data as $dataObject) {
+				$orderedData = $data = array();
+				foreach($dataObject as $key=>$value) {
+					if(in_array($key,$fieldsNeeded)) {
+						if($key=='emailaddresses') {
+							$emailaddresses = explode(',',$value);
+							$data['email'] = array_pop($emailaddresses);
+						} else {
+							$mapped = (isset($mapping[$key]) ? $mapping[$key] : $key);
+							$data[$mapped] = $value;
+						}
 					}
 				}
+				
+				if(!isset($data['company']) AND !empty($dataObject->domain)) $data['company'] = $dataObject->domain;
+				// order the data nicely for the preview functionality
+				foreach($fieldsNeeded as $key) {
+					$mapped = (isset($mapping[$key]) ? $mapping[$key] : $key);
+					if(isset($data[$mapped])) {
+						$orderedData[$mapped] = $data[$mapped];
+					}
+				}
+				
+				$json[] = $orderedData;
 			}
-	
-			echo json_encode($data);
+			echo json_encode($json);
 		} else {
 			echo json_encode(array());
 		}
