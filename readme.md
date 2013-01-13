@@ -4,23 +4,18 @@ This is a short description of what the extension does.
 
 Facts
 -----
-- version: 0.1.0
+- version: 1.0.0
 - extension key: Hackathon_Dataprovider
-- [extension on Magento Connect](http://www.magentocommerce.com/magento-connect/hackathon-dataprovider-1234.html)
-- Magento Connect 1.0 extension key: magento-community/Hackathon_Dataprovider
-- Magento Connect 2.0 extension key: http://connect20.magentocommerce.com/community/Hackathon_Dataprovider
 - [extension on GitHub](https://github.com/hackathon/Hackathon_Dataprovider)
-- [direct download link](http://connect.magentocommerce.com/community/get/Hackathon_Dataprovider-0.1.0.tgz)
 
 Description
 -----------
-This paragraph describes what the extension does.
+This extensions uses the Dataprovider.com API to retrieve data about companies and autocomplete fields in the checkout process.
 
 Requirements
 ------------
 - PHP >= 5.2.0
-- Mage_Core
-- ...
+- Magento
 
 Compatibility
 -------------
@@ -28,15 +23,15 @@ Compatibility
 
 Installation Instructions
 -------------------------
-1. Install the extension via Magento Connect with the key shown above or copy all the files into your document root.
+1. Install the extension via modman
 2. Clear the cache, logout from the admin panel and then login again.
-3. Configure and activate the extension under System - Configuration - Company - Example Extension.
-4. ...
+3. Get a key from Dataprovider.com by emailing them at info at dataprovider dot com
+4. Configure and activate the extension by pasting your API key under System - Configuration - Dataprovider
 
 Uninstallation
 --------------
 1. Remove all extension files from your Magento installation
-2. ...
+2. Drink a beer
 
 Support
 -------
@@ -48,9 +43,9 @@ Any contribution is highly appreciated. The best way to contribute code is to op
 
 Developer
 ---------
-FirstName LastName
-[http://www.firstname-lastname.com](http://www.firstname-lastname.com)
-[@FirstNameLastName](https://twitter.com/FirstNameLastName)
+Peter Jaap Blaakmeer
+[http://elgentos.nl](http://elgentos.nl)
+[@elgentos](https://twitter.com/elgentos) [@PeterJaap](https://twitter.com/PeterJaap)
 
 Licence
 -------
@@ -58,4 +53,4 @@ Licence
 
 Copyright
 ---------
-(c) 2012 Hackathon
+(c) 2013 Berlin Hackathon
