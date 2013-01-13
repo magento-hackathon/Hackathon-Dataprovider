@@ -101,7 +101,7 @@ Dataprovider = {
 					win = new Window({className: "magento", title: "Multiple results found.", width:400, height:400, destroyOnClose: true, recenterAuto:false});
 					content = "<p>We have found the following companies with the information you gave us;</p>";
 					jQuery.each(Dataprovider.data, function (key,result) {
-						content += "<a href='javascript:Dataprovider.fill("+key+",'"+field+"');'>"+result.company+'</a><br />';
+						content += '<a href="javascript:Dataprovider.fill('+key+',\''+field+'\');jQuery(\'div.magento_close\').click();">'+result.company+'</a><br />';
 					});
 					win.getContent().update(content);
 					win.setZIndex(100);
