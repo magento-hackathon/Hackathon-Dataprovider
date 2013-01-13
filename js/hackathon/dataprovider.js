@@ -97,6 +97,7 @@ Dataprovider = {
 			  	result = false;
 			  	if(Dataprovider.data.length===1) {
 			  		result = Dataprovider.data[0];
+			  		Dataprovider.fillFields(result,field);
 			  	} else if(Dataprovider.data.length>1) {
 					win = new Window({className: "magento", title: "Multiple results found.", width:400, height:400, destroyOnClose: true, recenterAuto:false});
 					content = "<p>We have found the following companies with the information you gave us;</p>";
@@ -107,8 +108,6 @@ Dataprovider = {
 					win.setZIndex(100);
 					win.showCenter(true);
 				}
-		  		
-		  		fillFields(result,field);
 				
 			}
 		  },
